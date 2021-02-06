@@ -1,0 +1,34 @@
+hello!
+
+algorithm 
+input of a string
+string all unique contents (letter / character)
+no array
+no array methods
+return bool
+javascript
+only string inputs
+input empty: true
+input of one character/letter: true
+
+input: hello = false
+input: copyright = true
+
+// since not array, string must remain whole
+// .charAt(#), .lastIndexOf("F")
+// ^ a letter, ^ index of a sought-after letter
+
+function checkUnique(input) {
+	if (input === "" || input.length === 1) {
+  	return true; 
+  }
+    
+  for (i=0; i < input.length; i++) {
+  	let inputFirstLetter = input.charAt(i);
+    let lastInstanceOfFirstLetter = input.lastIndexOf(inputFirstLetter);
+    if (i != lastInstanceOfFirstLetter) {
+    	return false;
+    }
+  }
+  return true;
+}
